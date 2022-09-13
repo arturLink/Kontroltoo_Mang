@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Kontroltoo_Mang
 {
+    //класс отвечающий за предметы
     internal class Ese : IEntity
     {
         int punktideArv;
         string info;
 
+        //конструктор создающий предметы
         public Ese(string info, int punktideArv)
         {
             this.punktideArv = punktideArv;

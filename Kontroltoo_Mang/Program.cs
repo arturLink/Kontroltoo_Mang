@@ -1,2 +1,2 @@
 ﻿using Kontroltoo_Mang;
-// kod artura! i tolko artura! A Artur genius!
+// kod artura! i tolko artura!
