@@ -13,16 +13,22 @@ namespace Kontroltoo_Mang
         List<Ese> esed;
 
         //конструктор для создания персонажей
-        public Character(string nimi, List<Ese> esed)
+        public Character(string nimi)
         {
             this.nimi = nimi;
-            this.esed = esed;
+            this.esed = new List<Ese>();
         }
 
+        //public Character(string nimi, List<Ese> esed)
+        //{
+        //    this.nimi = nimi;
+        //    this.esed = esed;
+        //}
+
         //метод для добавления предметов персонажам
-        public void lisaEse(Ese item)
-        {
-            esed.Add(item);
+        public void liisaEse(Ese ese) 
+        { 
+            esed.Add(ese); 
         }
 
         //метод для вычисления количества очков за все предметы

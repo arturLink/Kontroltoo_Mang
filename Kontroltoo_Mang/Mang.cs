@@ -40,7 +40,11 @@ namespace Kontroltoo_Mang
             foreach (Character plr in players)
             {
                 int arv = plr.PunktideArv();
-                if (arv > highest) { highest = arv; winner = plr; }
+                if (arv > highest) 
+                { 
+                    highest = arv; 
+                    winner = plr; 
+                }
             }
             return winner;
         }

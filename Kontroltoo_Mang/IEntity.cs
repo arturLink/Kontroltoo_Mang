@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kontroltoo_Mang
 {
-    //интерфейс для удобного создания методов в других классах?
+    //интерфейс для удобного создания методов в других классах
     internal interface IEntity
     {
         int PunktideArv();
