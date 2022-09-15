@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Kontroltoo_Mang
 {
     //класс отвечающий за предметы
-    internal class Ese : IEntity
+    internal class Ese : IUksus
     {
         int punktideArv;
         string info;

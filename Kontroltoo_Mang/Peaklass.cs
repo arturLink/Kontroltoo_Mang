@@ -10,6 +10,20 @@ namespace Kontroltoo_Mang
     internal class Peaklass
     {
         public static Random rnd = new Random();
+
+        static Tegelane[] addCharacter(int ChrAmount)
+        {
+            if (ChrAmount < 4) throw new Exception();
+            Tegelane[] players = new Tegelane[ChrAmount];
+            for (int i = 0; i < ChrAmount; i++)
+            {
+                Tegelane player = new Tegelane(getName());
+                players[i] = player;
+            }
+
+            return liisaEse(players);
+        }
+
         public static void Shuffle<T>(IList<T>list)
         {
             int n = list.Count;
@@ -44,11 +58,11 @@ namespace Kontroltoo_Mang
             return esed;
         }
 
-        static Character[] liisaEse(Character[] characters)
+        static Tegelane[] liisaEse(Tegelane[] characters)
         {
             List<Ese> itemList = LoeEsemed();
             if (itemList.Count <= 0) throw new ArgumentOutOfRangeException();
-            foreach (Character x in characters)
+            foreach (Tegelane x in characters)
             {
                 Shuffle(itemList);
                 int amount = rnd.Next(2, 10);
@@ -62,14 +76,16 @@ namespace Kontroltoo_Mang
 
         static public void Uus_mang(int kogus)
         {
-            Character charac = new Character(getName());
-            Mang mang = new Mang(players);
-            foreach (Character x in mang.SuurimaEsemeteArvuga())
+            Tegelane[] chactr = addCharacter(5);
+            Mang mang = new Mang(chactr);
+            foreach (Tegelane x in mang.SuurimaEsemeteArvuga())
             {
                 Console.WriteLine(x.Info());
             }
-            Character voitja = mang.suurimaPunktideArvuga();   
-            
+            Tegelane voitja = mang.suurimaPunktideArvuga();
+            Console.WriteLine(voitja.Info());
+            Console.WriteLine("Player had these items:");
+            voitja.väljastaEsemed();
 
         }
     }

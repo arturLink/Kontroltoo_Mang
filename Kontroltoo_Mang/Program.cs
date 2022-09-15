@@ -1,26 +1,19 @@
 ﻿using Kontroltoo_Mang;
+using System.Text;
 // kod artura! i tolko artura!
-List<Ese> items = new List<Ese>();
-StreamReader sr = new StreamReader(@"..\..\..\Items.txt");
-string text2;
-while ((text2 = sr.ReadLine()) != null)
+Console.OutputEncoding = Encoding.UTF8;
+
+
+
+try
 {
-    string[] rida = text2.Split(";");
-    items.Add(new Ese(rida[0], Converter(rida[1])));
+    Peaklass.Uus_mang(8);
 }
-sr.Close();
-
-foreach (var x in items)
+catch (ArgumentOutOfRangeException) //почему то не видит пункты из txt файла 
 {
-    Console.WriteLine(x.Info(),x.PunktideArv());
+    Console.WriteLine("file ne zapolnen");
 }
-Console.ReadLine();
-
-
-
-int Converter(string variable)
+catch (FileNotFoundException)
 {
-    string num = variable;
-    int Num = Int32.Parse(variable);
-    return Num;
+    Console.WriteLine("fail ne naiden");
 }

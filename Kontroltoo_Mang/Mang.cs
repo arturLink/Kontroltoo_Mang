@@ -8,18 +8,18 @@ namespace Kontroltoo_Mang
 {
     internal class Mang
     {
-        Character[] players;
+        Tegelane[] players;
         //конструктор
-        public Mang(Character[] players)
+        public Mang(Tegelane[] players)
         {
             this.players = players;
         }
         //перс с самым большим кол-во предметов
-        public List<Character> SuurimaEsemeteArvuga()
+        public List<Tegelane> SuurimaEsemeteArvuga()
         {
-            List<Character> winners = new List<Character>();
-            Character comparable = players[0];
-            foreach (Character plr in players)
+            List<Tegelane> winners = new List<Tegelane>();
+            Tegelane comparable = players[0];
+            foreach (Tegelane plr in players)
             {
                 int num = comparable.CompareTo(plr);
                 if (num < 0)
@@ -33,11 +33,11 @@ namespace Kontroltoo_Mang
             return winners;
         }
         //перс с самым большим кол-во очков
-        public Character suurimaPunktideArvuga()
+        public Tegelane suurimaPunktideArvuga()
         {
             int highest = 0;
-            Character winner = players[0];
-            foreach (Character plr in players)
+            Tegelane winner = players[0];
+            foreach (Tegelane plr in players)
             {
                 int arv = plr.PunktideArv();
                 if (arv > highest) 

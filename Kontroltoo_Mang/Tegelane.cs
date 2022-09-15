@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace Kontroltoo_Mang
 {
     //класс отвечающий персонажей
-    internal class Character : IEntity, IComparable<Character>
+    internal class Tegelane : IUksus, IComparable<Tegelane>
     {
         string nimi;
         List<Ese> esed;
 
         //конструктор для создания персонажей
-        public Character(string nimi)
+        public Tegelane(string nimi)
         {
             this.nimi = nimi;
             this.esed = new List<Ese>();
@@ -58,7 +58,7 @@ namespace Kontroltoo_Mang
         }
 
         //возвращает в порядковой последовательности
-        public int CompareTo(Character? other)
+        public int CompareTo(Tegelane? other)
         {
             if (other == null) return 1;
             return this.esed.Count() - other.esed.Count();
